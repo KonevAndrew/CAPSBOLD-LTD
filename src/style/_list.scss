@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat';
+  background-color: $back;
+}
+
+.list {
+  margin: 0 auto;
+  max-width: 420px;
+  height: 581px;
+  background: #252E42;
+  box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 0px 40px;
+  padding: 30px;
+  position: relative;
+  margin-top: 162px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 1px;
+    top: -15px;
+    background: linear-gradient(180deg, #31394D 0%, #091739 100%);
+    border-radius: 20px;
+    transform: rotate(-2.32deg);
+    width: 395.1px;
+    height: 67.97px;
+    z-index: -1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: -25px;
+    background: linear-gradient(180deg, #4F5565 0%, #000000 53.65%);
+    border-radius: 20px;
+    transform: rotate(-4.48deg);
+    width: 341.86px;
+    height: 85.23px;
+    z-index: -2;
+  }
+
+  @keyframes lift-after {
+    0% {
+      top: -15px;
+    }
+
+    100% {
+      top: -25px;
+    }
+  }
+
+  @keyframes lift-before {
+    0% {
+      top: -25px;
+    }
+
+    100% {
+      top: -45px;
+    }
+  }
+
+  @keyframes drop-after {
+    0% {
+      top: -25px;
+    }
+
+    100% {
+      top: -15px;
+    }
+  }
+
+  @keyframes drop-before {
+    0% {
+      top: -45px;
+    }
+
+    100% {
+      top: -25px;
+    }
+  }
+
+  &:hover::after {
+    animation: lift-after 0.3s forwards;
+  }
+
+  &:not(:hover)::after {
+    animation: drop-after 0.3s forwards;
+  }
+
+  &:hover::before {
+    animation: lift-before 0.5s forwards;
+  }
+
+  &:not(:hover)::before {
+    animation: drop-before 0.5s forwards;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    color: $white;
+  }
+
+  &__button {
+    background: #FF8469;
+    border-radius: 7px;
+    border: none;
+    color: $white;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      background: #D95133;
+    }
+  }
+
+  &__item {
+    overflow: scroll;
+    height: 420px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #FF8469;
+      border-radius: 10px;
+
+    }
+
+    li {
+      margin-right: 10px;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4F5565;
+    margin: 3px 0 0 35px;
+  }
+}
+
