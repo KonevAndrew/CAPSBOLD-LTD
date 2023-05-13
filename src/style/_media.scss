@@ -1,0 +1,34 @@
+@media (max-width: 1200px) {
+    .container {
+        width: 900px;
+        padding: 0 15px;
+    }
+}
+@media (max-width: 991px) {
+    .container {
+        width: 770px;
+        padding: 0 15px;
+    }
+}
+@media (max-width: 767px) {
+    .container {
+        width: 540px;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 575px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .list {
+        max-width: 397px;
+        margin-top: 80px;
+        &::after {
+            max-width: 90%;
+        }
+        &::before {
+            max-width: 80%;
+        }
+    }
+}
